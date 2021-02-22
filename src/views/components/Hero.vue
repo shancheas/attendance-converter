@@ -122,7 +122,7 @@ export default {
         try {
             let time = times.match(/.{1,5}/g)
             time = time || [null, null]
-            time = time.length < 2 ? time.push(null) : time
+            if (time.length < 2) time.push(null)
             
             const come = time[0]
             const back = time[time.length - 1]
